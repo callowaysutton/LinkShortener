@@ -41,3 +41,9 @@ class LoginForm(FlaskForm):
                            validators=[DataRequired(), Length(min=2, max=20)])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class LinkForm(FlaskForm):
+    username = StringField('URL',
+                           validators=[DataRequired(), Length(min=2, max=1024)], default="https://google.com")
+    password = StringField('Nickname', validators=[DataRequired()], default="Google")
+    submit = SubmitField('Submit')

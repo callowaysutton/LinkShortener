@@ -18,8 +18,9 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.Text, nullable=True, default="")
     email = db.Column(db.String(100), nullable=True, default="")
     profile_picture = db.Column(db.String(256), nullable=False, default="")
-
     date_registered = db.Column(db.DateTime, default=datetime.utcnow)
+
+    links = db.relationship('Link', backref='user', lazy=True)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.date_registered}')"
@@ -32,8 +33,9 @@ class Link(db.Model):
     link = db.Column(db.String(1024), unique=True, nullable=False)
     visits = db.Column(db.Integer())
     errors = db.Column(db.Integer())
-
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     
     def __repr__(self):
         return f"Link('{self.link}', '{self.visits}')"

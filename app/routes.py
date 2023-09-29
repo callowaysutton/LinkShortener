@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect
 from flask_login import login_user, current_user, login_required, logout_user
 from app import app, db
 from app.models import User, Link
-from app.forms import RegistrationForm, LoginForm
+from app.forms import RegistrationForm, LoginForm, LinkForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from libgravatar import Gravatar
 from sqlalchemy import func
@@ -150,7 +150,7 @@ def dashboard():
 @login_required
 def create_new():
     return render_template(
-        "dashboard/create_new.jinja", user=current_user, version=version
+        "dashboard/create_new.jinja", user=current_user, version=version, form=LinkForm()
     )
 
 
