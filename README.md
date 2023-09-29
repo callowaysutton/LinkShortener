@@ -35,7 +35,7 @@ To start using the IU Link Shortener, follow these steps:
 
 ## Support and Feedback
 
-If you encounter any issues, have questions, or would like to provide feedback, please don't hesitate to [contact us](mailto:me+shortener@callowaysutton.com). I'm always there to assist you and make this service as useful as possible for the IU community.
+If you encounter any issues, have questions, or would like to provide feedback, please don't hesitate to [contact me](mailto:me+shortener@callowaysutton.com). I'm always there to assist you and make this service as useful as possible for the IU community.
 
 ## Contributing
 
