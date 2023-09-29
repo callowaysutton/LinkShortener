@@ -18,16 +18,8 @@ class RegistrationForm(FlaskForm):
                              validators=[Length(min=1, max=20)])
     location = StringField('Location',
                              validators=[Length(min=1, max=20)])
-    # phone_number = StringField('Phone Number',
-    #                          validators=[Length(min=1, max=20)])
     email = StringField('Email',
                              validators=[DataRequired(), Length(min=1, max=20)])
-    # bio = StringField('Biography',
-    #                          validators=[Length(min=1, max=20)])
-    # interests = StringField('Interests',
-    #                          validators=[Length(min=1, max=20)])
-    # website = StringField('Website',
-    #                          validators=[Length(min=1, max=20)])
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
